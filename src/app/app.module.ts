@@ -14,6 +14,11 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { VerProductoComponent } from './pages/productos/ver-producto/ver-producto.component';
 import { EditarProductosComponent } from './pages/productos/editar-productos/editar-productos.component';
 
+import { authGuard } from "./auth.guard";
+import { CrearComponent } from './pages/users/crear/crear.component';
+import { EditarComponent } from './pages/users/editar/editar.component';
+import { ListarComponent } from './pages/users/listar/listar.component';
+import { VerComponent } from './pages/users/ver/ver.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { EditarProductosComponent } from './pages/productos/editar-productos/edi
     CrearProductosComponent,
     NavbarComponent,
     VerProductoComponent,
-    EditarProductosComponent
+    EditarProductosComponent,
+    CrearComponent,
+    EditarComponent,
+    ListarComponent,
+    VerComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,9 @@ import { EditarProductosComponent } from './pages/productos/editar-productos/edi
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    authGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

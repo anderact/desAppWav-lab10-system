@@ -21,4 +21,8 @@ export class DataLoginService {
   getUser(user: any): Observable<any> {
     return this.http.post(this.URL + '/login', user)
   }
+
+  loggedIn() {
+    return !!localStorage.getItem('token');
+  }
 }
